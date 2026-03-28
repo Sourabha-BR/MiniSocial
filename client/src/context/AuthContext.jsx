@@ -57,15 +57,13 @@ export const AuthProvider = ({ children }) => {
 
 
   // Inside your component...
-  const navigate = useNavigate();
-
   const logout = () => {
-    localStorage.removeItem('token'); // Clears the saved session
-    setAuthToken(null);               // Clears the header state
-    setUser(null);                    // Clears user data
+    localStorage.removeItem('token');
+    setAuthToken(null);
+    setUser(null);
 
-    // Add this line to fix the 404/Redirect issue:
-    navigate('/login');
+    // Use this instead of navigate('/') to force a clean reload
+    window.location.href = '/login';
   };
 
   return (
