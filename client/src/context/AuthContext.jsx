@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -54,10 +54,18 @@ export const AuthProvider = ({ children }) => {
     setUser(res.data.user);
   };
 
+
+
+  // Inside your component...
+  const navigate = useNavigate();
+
   const logout = () => {
-    localStorage.removeItem('token');
-    setAuthToken(null);
-    setUser(null);
+    localStorage.removeItem('token'); // Clears the saved session
+    setAuthToken(null);               // Clears the header state
+    setUser(null);                    // Clears user data
+
+    // Add this line to fix the 404/Redirect issue:
+    navigate('/login');
   };
 
   return (
