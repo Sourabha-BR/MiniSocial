@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+}
+
+.app-container {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #f4f6fb;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0,0,0,0.5);
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Auth pages full background */
+.auth-container {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom scrollbar for mobile feel */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
