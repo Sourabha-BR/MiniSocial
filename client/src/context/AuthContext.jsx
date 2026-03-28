@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // Set the base URL for API
-  axios.defaults.baseURL = 'http://localhost:5003/api';
+  axios.defaults.baseURL = 'https://minisocial-nycd.onrender.com/api';
 
   useEffect(() => {
     const token = localStorage.getItem('token');
